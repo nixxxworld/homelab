@@ -1,0 +1,14 @@
+services:
+  ###############################################
+  # ADGUARD HOME - DNS Blocking Ads
+  ###############################################
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    restart: unless-stopped
+    network_mode: host
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /data/adguardhome/work:/opt/adguardhome/work
+      - /data/adguardhome/conf:/opt/adguardhome/conf
